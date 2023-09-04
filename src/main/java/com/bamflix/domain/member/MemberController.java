@@ -53,10 +53,10 @@ public class MemberController {
     }
 
     // 회원 정보 수정
-    @PatchMapping("/editProfile/{id}")
+    @PostMapping("/editProfile/{id}")
     @ResponseBody
     public Long updateMember(@PathVariable final Long id, @RequestBody final MemberRequest params) {
-        return memberService.updateMember(params);
+        return memberService.updateMember(id, params);
     }
 
     // 회원 정보 삭제 (회원 탈퇴)

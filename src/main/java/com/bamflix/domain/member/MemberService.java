@@ -35,13 +35,15 @@ public class MemberService {
 
     /**
      * 회원 정보 수정
+     *
+     * @param id
      * @param params - 회원 정보
      * @return PK
      */
     @Transactional
-    public Long updateMember(final MemberRequest params) {
+    public Long updateMember(Long id, final MemberRequest params) {
         params.encodingPassword(passwordEncoder);
-        memberMapper.update(params);
+        memberMapper.update(id, params);
         return params.getId();
     }
 

@@ -23,7 +23,7 @@ public interface MemberMapper {
      * 회원 정보 수정
      * @param params - 회원 정보
      */
-    void update(MemberRequest params);
+    void update(Long id, MemberRequest params);
 
     /**
      * 회원 정보 삭제 (회원 탈퇴)

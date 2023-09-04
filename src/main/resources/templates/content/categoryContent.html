@@ -122,7 +122,7 @@
     }
 
     .contentCard .card {
-      margin-left: 10px;
+      margin-left: 15px;
     }
 
     /* 추가된 스타일: 작은 화면 크기에서 이미지를 세로로 정렬 */
@@ -139,22 +139,24 @@
 
 <main class="container-fluid">
   <div class="card-group contentCard">
-    <section style="display: flex" id="section1">
-      <div class="card">
-          <span th:text="${Action}"></span>
+    <section style="display: inline" id="section1">
+      <div class="card" th:each="content : ${contents}">
+        <div th:if="${#strings.equals(content.genre, 'Action')}">
+          <h2>Action</h2>
+        </div>
       </div>
 
       <div class="card" th:each="content : ${contents}">
         <div th:if="${#strings.equals(content.genre, 'Action')}">
           <a th:href="@{/contentDetail(title=${content.title})}">
-            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1>
+            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1 style="margin-left: 15px">
           </a>
         </div>
       </div>
     </section>
 
     <br><br>
-    <section style="display: flex" id="section2">
+    <section style="display: inline" id="section2">
       <div class="card" th:each="content : ${contents}">
         <div th:if="${#strings.equals(content.genre, 'Romance')}">
           <h2>Romance</h2>
@@ -164,14 +166,14 @@
       <div class="card" th:each="content : ${contents}">
         <div th:if="${#strings.equals(content.genre, 'Romance')}">
           <a th:href="@{/contentDetail(title=${content.title})}">
-            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1>
+            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1 style="margin-left: 15px">
           </a>
         </div>
       </div>
     </section>
 
     <br><br>
-    <section style="display: flex" id="section3">
+    <section style="display: inline" id="section3">
       <div class="card" th:each="content : ${contents}">
         <div th:if="${#strings.equals(content.genre, 'Comic')}">
           <h2>Comic</h2>
@@ -180,14 +182,14 @@
       <div class="card" th:each="content : ${contents}">
         <div th:if="${#strings.equals(content.genre, 'Comic')}">
           <a th:href="@{/contentDetail(title=${content.title})}">
-            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1>
+            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1 style="margin-left: 15px">
           </a>
         </div>
       </div>
     </section>
 
     <br><br>
-    <section style="display: flex" id="section4">
+    <section style="display: inline" id="section4">
       <div class="card" th:each="content : ${contents}">
         <div th:if="${#strings.equals(content.genre, 'SF')}">
           <h2>SF</h2>
@@ -196,7 +198,7 @@
       <div class="card" th:each="content : ${contents}">
         <div th:if="${#strings.equals(content.genre, 'SF')}">
           <a th:href="@{/contentDetail(title=${content.title})}">
-            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1>
+            <img th:src="@{${content.getImgPath()}}" class="card-img-top" alt=card1 style="margin-left: 15px">
           </a>
         </div>
       </div>
